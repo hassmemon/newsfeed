@@ -1,1 +1,1 @@
-My Newsfeed App
+Spectrum
