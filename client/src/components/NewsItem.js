@@ -31,31 +31,26 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function NewsItem({ title, description, url, image }) {
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={8}>
-                <Item>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia component='img' height='140' image={image} />
-                        <CardContent>
-                            <Typography
-                                gutterBottom
-                                variant='h5'
-                                component='div'>
-                                {title}
-                            </Typography>
-                            <Typography variant='body2' color='text.secondary'>
-                                {description}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <a href={url}>
-                                {' '}
-                                <Button size='small'>Learn More</Button>{' '}
-                            </a>
-                        </CardActions>
-                    </Card>
-                </Item>
-            </Grid>
+        <Grid item xs={4}>
+            <Item>
+                <Card sx={{ maxWidth: 345 }}>
+                    <CardMedia component='img' height='140' image={image} />
+                    <CardContent>
+                        <Typography gutterBottom variant='h5' component='div'>
+                            {title}
+                        </Typography>
+                        <Typography variant='body2' color='text.secondary'>
+                            {description}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <a href={url}>
+                            {' '}
+                            <Button size='small'>Learn More</Button>{' '}
+                        </a>
+                    </CardActions>
+                </Card>
+            </Item>
         </Grid>
     );
 }

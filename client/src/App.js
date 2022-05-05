@@ -42,8 +42,8 @@ const categories = [
     },
     {
         id: 5,
-        label: 'The American Conservative',
-        url: 'the-american-conservative',
+        label: 'New York Post',
+        url: 'the-hill',
     },
     {
         id: 6,
@@ -59,13 +59,14 @@ function App() {
     return (
         <div className='App'>
             <h1 className='heading'>Spectrum</h1>
+
             <Buttons
                 categories={categories}
                 onClick={(category) => {
                     setSelectedCategory(category.id);
                     axios
                         .get(
-                            `https://newsapi.org/v2/top-headlines?sources=${categories[selectedCategory].url}&apiKey=${process.env.REACT_APP_API_KEY}`
+                            `/api/news/top-headlines?sources=${categories[selectedCategory].url}`
                         )
                         .then((response) => {
                             console.log(response);
