@@ -19,4 +19,4 @@ Challenges:
 
 1. Transporting data over from the form to the API has been a challenge. I am working on resolving the issue.
 2. Slow load speed. Unfortunately, there is a lag in the app when loading news items. I suspect this is due to the API that I am using. I will explore other API's as speed is crucial for a news app, especially one that does not offer much functionality other than browsing.
-3. Styling has been a challenge. I was not able to change the colour of the font in the input field. So I have had to change the background colour from black to grey, which has made the app less attractive.
+3. Styling has been a challenge. It was a struggle to create the search form using material UI. I had to abondon MUI for this portion of the app. I will reincorporate it for a later version or use another UI framework.
