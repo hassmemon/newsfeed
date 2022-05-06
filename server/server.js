@@ -11,10 +11,6 @@ const path = require('path');
 app.set('trust proxy', 1);
 app.use(express.json()); // support json encoded bodies
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World!');
-// });
-
 app.get('/api/news/top-headlines', (req, res) => {
     axios
         .get(

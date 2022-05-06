@@ -72,9 +72,9 @@ function App() {
                 }}
             />
             <Search
-                onSubmit={(category) => {
+                onSubmit={(searchText) => {
                     axios
-                        .get(`'/api/news/everything?q=${formdata}`)
+                        .get(`/api/news/everything?q=${searchText}`)
                         .then((response) => {
                             console.log(response);
                             setArticles(response.data.articles);
