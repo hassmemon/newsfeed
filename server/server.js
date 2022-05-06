@@ -25,15 +25,15 @@ app.get('/api/news/top-headlines', (req, res) => {
         });
 });
 
-// app.get('/api/news/everything', (req, res) => {
-//     axios
-//         .get(
-//             `https://newsapi.org/v2/everything?q=${req.query.q}&from=${req.query.from}&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`
-//         )
-//         .then((response) => {
-//             res.json(response.data)
-//         });
-// });
+app.get('/api/news/everything', (req, res) => {
+    axios
+        .get(
+            `https://newsapi.org/v2/everything?q=${req.query.q}&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`
+        )
+        .then((response) => {
+            res.json(response.data);
+        });
+});
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));

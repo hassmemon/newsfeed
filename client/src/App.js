@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import NewsFeed from './components/NewsFeed';
 import Buttons from './components/Buttons';
+import Search from './components/Search';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { inputAdornmentClasses } from '@mui/material';
 
 const darkTheme = createTheme({
     palette: {
@@ -15,11 +17,6 @@ const darkTheme = createTheme({
 });
 
 const categories = [
-    // {
-    //     id: 0,
-    //     label: 'BBC',
-    //     url: 'bbc-news',
-    // },
     {
         id: 0,
         label: 'MSNBC',
@@ -68,6 +65,16 @@ function App() {
                         .get(
                             `/api/news/top-headlines?sources=${categories[selectedCategory].url}`
                         )
+                        .then((response) => {
+                            console.log(response);
+                            setArticles(response.data.articles);
+                        });
+                }}
+            />
+            <Search
+                onSubmit={(category) => {
+                    axios
+                        .get(`'/api/news/everything?q=${formdata}`)
                         .then((response) => {
                             console.log(response);
                             setArticles(response.data.articles);
